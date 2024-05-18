@@ -1,0 +1,176 @@
+.banner {
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.banner .circle {
+  position: absolute;
+  width: 10vw;
+  height:10vw;
+  filter: blur(70px);
+  border-radius: 50%;
+  background-color: var(--theme-color);
+}
+.banner .circle:nth-child(1) {
+  top: 7vw;
+  left: 7vw;
+}
+.banner .circle:nth-child(2) {
+  bottom: 7vw;
+  right: 7vw;
+}
+.banner .circle:nth-child(3) {
+  bottom: 7vw;
+  left: 7vw;
+}
+.banner .circle:nth-child(4) {
+  top: 7vw;
+  right: 7vw;
+}
+.banner .banner-header {
+  height: 150px;
+  text-align: center;
+  position: relative;
+}
+.banner .banner-header h2 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 600;
+  color: var(--theme-text);
+  text-shadow: 0 0 5px var(--theme-color);
+}
+.banner .expertize-area {
+  margin-top: 5rem;
+  display: grid;
+  place-items: start center;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem;
+}
+.banner .expertize-area .left-side,
+.banner .expertize-area .right-side {
+  width: 100%;
+  text-align: center;
+}
+.banner .expertize-area .left-side h3,
+.banner .expertize-area .right-side h3 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 600;
+  background-image: linear-gradient(45deg, #0086e6, #003256 50%, #e27100 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.banner .expertize-area .left-side ul,
+.banner .expertize-area .right-side ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  overflow: hidden;
+  max-width: 300px;
+  margin-inline: auto;
+}
+.banner .expertize-area .left-side ul li,
+.banner .expertize-area .right-side ul li {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--theme-text);
+  transition: 0.3s;
+  opacity: 0.5;
+  transform: translateX(0);
+  display: flex;
+  text-align: center;
+  gap: 1rem;
+  position: relative;
+  background-color: transparent;
+  padding-left: 1rem;
+  animation: transform 0.5s ease-in-out;
+}
+.banner .expertize-area .left-side ul li:hover,
+.banner .expertize-area .right-side ul li:hover {
+  color: var(--black);
+  opacity: 1;
+}
+@keyframes transform {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.banner .expertize-area .left-side ul li::before,
+.banner .expertize-area .right-side ul li::before {
+  content: "\1234\00a0";
+  color: var(--theme-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Pt sans", sans-serif;
+}
+.banner .expertize-area .left-side ul li::after,
+.banner .expertize-area .right-side ul li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-image: linear-gradient(45deg, #0086e6, #003256 50%, #e27100 50%);
+  border-radius: 3rem;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+.banner .expertize-area .left-side ul li:hover::after,
+.banner .expertize-area .right-side ul li:hover::after {
+  width: 100%;
+}
+.banner .expertize-area .left-side ul li a,
+.banner .expertize-area .right-side ul li a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+.banner .expertize-area .mid-side {
+  width: 100%;
+}
+.banner .expertize-area .mid-side .image-wrapper {
+  width: 100%;
+  height: 600px;
+  scale: 0.8;
+  rotate: 10deg;
+  border-radius: 4rem 1rem;
+  overflow: hidden;
+}
+.banner .expertize-area .mid-side .image-wrapper img {
+  object-position: 10%;
+}
+.banner .expertize-area .mid-side .image-wrapper img {
+  object-fit: cover;
+  transition: 0.3s;
+}
+@media screen and (max-width: 1080px) {
+  .banner .expertize-area {
+    margin-top: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .banner .expertize-area .mid-side {
+    grid-column: 1/-1;
+    order: 2;
+    width: 100%;
+    height: 100%;
+    margin-top: 5rem;
+  }
+
+  .banner .expertize-area .mid-side .image-wrapper img {
+    object-position: -15%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner .expertize-area .mid-side {
+    width: 90%;
+    margin-top: 3rem;
+  }
+  .banner .expertize-area .mid-side{
+    display: none;
+  }
+}

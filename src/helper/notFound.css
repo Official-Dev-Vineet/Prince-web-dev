@@ -1,0 +1,95 @@
+.notFound {
+  margin-top: 100px;
+  text-align: center;
+  color: var(--white);
+  box-shadow: 0 0 10px var(--theme-color);
+  max-width: max-content;
+  margin-inline: auto;
+  border-radius: 0.5rem;
+  transform-style: preserve-3d;
+  transform: perspective(500px) rotateX(30deg);
+  transition: 0.5s;
+  position: relative;
+}
+.notFound:hover {
+  transform: perspective(500px) rotateX(0deg);
+  animation: animate1 5s ease-in-out infinite;
+}
+.notFound svg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.notFound svg circle {
+  fill: none;
+  stroke: var(--theme-color);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: stroke 10s ease-in-out infinite;
+}
+@keyframes stroke {
+  50% {
+    stroke-dasharray: 100, 200;
+  }
+}
+.notFound .text-area {
+  backdrop-filter: blur(3px);
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+.notFound p {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  font-family: "PT Serif", serif;
+  margin-bottom: 1rem;
+}
+.notFound h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+.notFound a {
+  font-size: clamp(1rem, 3vw, 3rem);
+  text-decoration: initial;
+  text-decoration: underline;
+  /* wavy text */
+  background-image: linear-gradient(
+    to right,
+    #0086e6,
+    #003256 50%,
+    #e27100 50%
+  );
+  font-family: "PT Serif", serif;
+  transform-style: preserve-3d;
+  display: block;
+  transform: perspective(500px) rotateX(10deg);
+  background-repeat: no-repeat;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: 0.5s;
+}
+.notFound a:hover {
+  animation: animate1 2s ease-in-out infinite;
+}
+@keyframes animate1 {
+  0%,
+  100% {
+    background-position: 0% 10%;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    background-position: 100% 150%;
+    filter: hue-rotate(360deg);
+  }
+}

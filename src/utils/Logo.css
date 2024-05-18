@@ -1,0 +1,11 @@
+.logoImg{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    background-color: var(--theme-color);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 50px var(--theme-color);
+    cursor: pointer;
+    margin: auto;
+}

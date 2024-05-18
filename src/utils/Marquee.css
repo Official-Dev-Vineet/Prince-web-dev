@@ -1,0 +1,29 @@
+.marquee {
+  position: relative;
+  max-width: 1800px;
+  width: 100%;
+  height: clamp(2rem, 5vw, 9rem);
+  overflow-x: hidden;
+}
+
+.marquee .track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee linear infinite;
+}
+.marquee .track .content {
+  font-weight: bolder;
+  font-size: clamp(1rem, 3vw, 3rem);
+  color: var(--theme-text);
+  -webkit-text-stroke: 1px var(--theme-color);
+  -webkit-text-fill-color: transparent;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(30%);
+  }
+  to {
+    transform: translateX(-70%);
+  }
+}

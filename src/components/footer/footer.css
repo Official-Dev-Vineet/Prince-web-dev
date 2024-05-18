@@ -1,0 +1,130 @@
+footer {
+  padding: 2rem 0.5rem;
+  background-color: var(--black);
+}
+footer .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer .wrapper .ads {
+  background-color: rgba(100, 100, 100, 0.3);
+  width: 100%;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+footer .wrapper .ads p {
+  font-weight: bolder;
+  font-size: clamp(1rem, 3vw, 3rem);
+  color: var(--theme-text);
+  -webkit-text-stroke: 1px var(--theme-color);
+  -webkit-text-fill-color: transparent;
+}
+footer .serviceLinks {
+  margin: 3rem 0;
+  display: flex;
+  width: 100%;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 2rem 1rem;
+}
+footer .serviceLinks .links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+footer .serviceLinks .links p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+footer .serviceLinks .links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+footer .serviceLinks .links ul li {
+  list-style: none;
+}
+footer .serviceLinks .links ul li a {
+  text-decoration: none;
+  color: var(--theme-text);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px var(--theme-color);
+}
+footer .wrapper .socialLinks {
+  width: 100%;
+}
+footer .wrapper .socialLinks ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+}
+footer .wrapper .socialLinks ul li {
+  list-style: none;
+  transition: 0.3s;
+}
+footer .wrapper .socialLinks ul li:hover {
+  transform: translate3d(0, -5px, 0);
+}
+footer .wrapper .socialLinks ul li a {
+  text-decoration: none;
+  color: var(--theme-text);
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px var(--theme-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: 0.3s;
+}
+
+footer .wrapper .socialLinks ul li a:hover {
+  color: #3b4d75;
+  text-shadow: 0 0 5px #3b4d75;
+}
+footer .wrapper .socialLinks ul li a:hover svg {
+  color:var(--theme-text);
+  text-shadow: 0 0 5px var(--theme-color);
+}
+footer .wrapper .socialLinks ul li a svg {
+  font-size: 1.9rem;
+  color: #3b4d75;
+  transition: 0.3s;
+}
+footer .copyRight{
+  width: 100%;
+}
+footer .contactNumber{
+  padding: 1rem;
+background-color: rgba(100,100,100,0.3  );
+max-width: 500px;
+border-radius: 0.5rem;
+width: 100%;
+text-align: center;
+}
+footer .contactNumber p{
+  display: flex;
+  flex-direction: column;
+}
+footer .contactNumber p b{
+  font-size: calc(1rem + 1vw);
+  margin-bottom: 1rem;
+}
+footer .contactNumber p a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
