@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -26,20 +26,20 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li onClick={toggleNavbar}>
-            <NavLink to="/about">About Us</NavLink>
+            <NavLink to="/account">Account</NavLink>
           </li>
           <li onClick={toggleNavbar}>
             <NavLink to="/services">Services</NavLink>
           </li>
           <li onClick={toggleNavbar}>
-            <NavLink to="/online-web-development-course">Online Class</NavLink>
+            <NavLink to="/online-course" className={"new"}>Online Course</NavLink>
           </li>
         </ul>
-        <div className="logo" title="Official Dev Vineet">
+        <Link to="/" className="logo" title="Official Dev Vineet">
           <span>Prince</span>
           <span>Web</span>
           <span>Dev</span>
-        </div>
+        </Link>
         <ul className={`common-link right ${open ? "active" : ""}`}>
           <li onClick={toggleNavbar}>
             <NavLink to="/blog">Blog</NavLink>
@@ -48,13 +48,13 @@ const Navbar = () => {
             <NavLink to="/portfolio">Portfolio</NavLink>
           </li>
           <li onClick={toggleNavbar}>
-            <NavLink to="/news">News</NavLink>
+            <NavLink to="/telegram">Telegram</NavLink>
           </li>
           <li onClick={toggleNavbar}>
             <NavLink to="/contact">Contact</NavLink>
           </li>
           <li onClick={toggleNavbar}>
-            <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/project">Projects</NavLink>
           </li>
         </ul>
         <div className={`bar ${open ? "active" : ""}`} onClick={toggleNavbar}>

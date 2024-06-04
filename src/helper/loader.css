@@ -1,11 +1,10 @@
 .loader {
   max-width: 300px;
   transform-style: preserve-3d;
-  margin: 0 auto;
+  margin:auto;
   height: 300px;
   transform: perspective(500px) rotateX(60deg);
   position: relative;
-
 }
 .loader span {
   position: absolute;
@@ -21,7 +20,7 @@
     transform: translateZ(0px);
   }
   50% {
-    transform: translateZ(-100px);
+    transform: translateZ(-50px);
   }
 }
 .loader span:nth-child(1) {

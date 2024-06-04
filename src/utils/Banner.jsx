@@ -24,6 +24,7 @@ const Banner = () => {
     { tagName: "JWT", link: "/portfolio/project?q=JWT" },
     { tagName: "PHP", link: "/portfolio/project?q=PHP" },
   ];
+ 
   return (
     <section className="banner">
       <div className="circle"></div>
@@ -75,7 +76,7 @@ const Banner = () => {
           </ul>
         </div>
       </div>
-      <Button name={"Know More"} link={"/about"} />
+      <Button name={"Join Our Class"} link={"/online-course"} />
     </section>
   );
 };

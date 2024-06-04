@@ -1,9 +1,10 @@
 .logoImg{
-    width: 30vw;
-    height: 30vw;
+    width: clamp(10rem, 30vw, 15rem);
+    height: clamp(10rem, 30vw, 15rem);
     border-radius: 50%;
     background-color: var(--theme-color);
     display: grid;
+    overflow: hidden;
     place-items: center;
     box-shadow: 0 0 50px var(--theme-color);
     cursor: pointer;

@@ -1,0 +1,102 @@
+.popUp {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+  z-index: 999;
+  overflow: auto;
+}
+.popUp .popupWrap {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--theme-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px var(--theme-color);
+}
+.popUp .popupWrap .popUpHeader {
+  background-image: linear-gradient(45deg, #0086e6, #003256 50%, #e27100 50%);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+.popUp .popupWrap .popUpContent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  gap: 1rem;
+}
+.popUp .popupWrap .popUpContent .links {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 90%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 0 2px var(--black);
+}
+.popUp .popupWrap .popUpContent .links .info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.popUp .popupWrap .popUpContent .links .info a {
+  text-decoration: none;
+  color: var(--theme-color);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.3s;
+}
+.popUp .popupWrap .popUpContent .links .info a svg{
+  font-size: 1.5rem;
+  color: var(--theme-text);
+}
+.popUp .popupWrap .popUpContent .img {
+  width: 100%;
+  height: 100%;
+}
+.popUp .popupWrap .btn {
+  width: 100%;
+  text-align: center;
+  margin: 1rem auto;
+  background-color: var(--theme-text);
+  color: var(--black);
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  font-weight: 500;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  max-width: 300px;
+}
+
+.popUp .popupWrap .btn:hover {
+  background-color: var(--theme-color);
+  color: var(--black);
+}
+.popUp .closeBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  cursor: pointer;
+}
+.popUp .note{
+  text-align: center;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-weight: 500;
+  color: var(--black);
+}

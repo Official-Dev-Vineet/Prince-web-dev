@@ -13,8 +13,10 @@
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  overflow: hidden;
   transform: perspective(500px) rotateX(30deg);
+}
+.project-card:hover{
+  box-shadow: 0 0 30px var(--white);
 }
 .project-card::after {
   content: "";
@@ -41,12 +43,8 @@
   font-family: system-ui, sans-serif;
   font-style: italic;
   position: relative;
-}
-.project-card .project-card__image img {
-  transition: 0.3s;
-}
-.project-card .project-card__image:hover img {
-  transform: scale(0.9);
+  transform: perspective(500px) rotateX(-30deg);
+  transform-style: preserve-3d;
 }
 .project-card .project-card__content {
   width: 100%;

@@ -4,9 +4,9 @@ import { Link, useLocation } from "react-router-dom";
 import {
   FaGithub,
   FaLinkedinIn,
-  FaXTwitter,
   FaInstagram,
 } from "react-icons/fa6";
+import { SiTelegram } from "react-icons/si";
 import { FiYoutube } from "react-icons/fi";
 import { useState } from "react";
 import "./Connect.css";
@@ -26,9 +26,9 @@ const Connect = () => {
       icon: <FaLinkedinIn />,
     },
     {
-      name: "Twitter",
-      link: "https://twitter.com/OfficialDevVineet",
-      icon: <FaXTwitter />,
+     name:"Telegram",
+     link:"https://t.me/prince_web",
+     icon:<SiTelegram/>
     },
     {
       name: "Instagram",
@@ -47,12 +47,15 @@ const Connect = () => {
     phone: "",
     message: "",
   });
+  const filterInputStringToPreventSQLInjection = (input) => {
+    return input.replace(/[^a-zA-Z0-9\s.@#]/g, "");
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: filterInputStringToPreventSQLInjection(value),
     }));
   };
 
@@ -60,22 +63,32 @@ const Connect = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://example.com/submit-form", {
+      fetch("https://dev-vineet.online/api/contactData.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          data: formData,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
           query: queryValue,
         }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      alert("Form submitted successfully!");
+      })
+        .then((res) => {
+          res
+            .json()
+            .then(
+              (data) =>
+                data.code === 200 &&
+                (setFormData({ name: "", email: "", phone: "", message: "" }),
+                alert(data.message))
+            );
+        })
+        .catch((error) => {
+          console.error("Error submitting form:", error.message);
+        });
     } catch (error) {
       console.error("Error submitting form:", error.message);
       alert("Error submitting form. Please try again later.");

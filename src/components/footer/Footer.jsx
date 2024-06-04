@@ -4,12 +4,8 @@ import { Link } from "react-router-dom";
 import Button from "../../utils/Button";
 import Logo from "../../utils/Logo";
 import "./footer.css";
-import {
-  FaGithub,
-  FaLinkedinIn,
-  FaXTwitter,
-  FaInstagram,
-} from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa6";
+import { SiTelegram } from "react-icons/si";
 import { FiYoutube } from "react-icons/fi";
 import Marquee from "../../utils/Marquee";
 const Footer = () => {
@@ -26,9 +22,9 @@ const Footer = () => {
       icon: <FaLinkedinIn />,
     },
     {
-      name: "Twitter",
-      link: "https://twitter.com/OfficialDevVineet",
-      icon: <FaXTwitter />,
+      name: "Telegram",
+      link: "https://t.me/prince_web",
+      icon: <SiTelegram />,
     },
     {
       name: "Instagram",
@@ -106,6 +102,14 @@ const Footer = () => {
     {
       name: "Portfolio",
       link: "/portfolio",
+    },
+    {
+      name: "Account",
+      link: "/account",
+    },
+    {
+      name: "Sitemap",
+      link: "sitemap",
     },
   ];
   const ourTools = ["image-compression", "image-convertor", "image-resizer"];
@@ -202,7 +206,7 @@ const Footer = () => {
                   <li key={tool}>
                     {" "}
                     <Link
-                      to={`contact?q=${tool}`}
+                      to={`${tool}`}
                       style={{
                         color: "#2ac2d1",
                         textShadow: "0 0 10px #2ac2d1",

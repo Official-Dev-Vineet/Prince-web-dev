@@ -11,9 +11,16 @@ const CourseDetails = () => {
     message: "",
   });
   const formRef = useRef(null);
+  const filterInputStringToPreventSQLInjection = (input) => {
+    return input.replace(/[^a-zA-Z0-9\s.*@]/g, "");
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      [name]: filterInputStringToPreventSQLInjection(value),
+    });
   };
   const handleClose = (e) => {
     if (formRef.current && !formRef.current.contains(e.target)) {
@@ -57,22 +64,15 @@ const CourseDetails = () => {
       }),
     })
       .then((res) => {
-        if (!res.ok) {
-          // Check if the response was successful (HTTP status code in the range 200-299)
-          throw new Error("Network response was not ok " + res.status);
-        }
-        return res.json(); // This returns a promise
-      })
-      .then((data) => {
-        if (data.message === "Message sent successfully.") {
-          // Adapt this condition to the actual success criteria
-          console.log("Form submitted successfully");
-          // Optionally reset the form or close the modal here
-          // resetForm();
-          // closeModal();
-        } else {
-          console.log("Form submission failed: " + data.error);
-        }
+        res
+          .json()
+          .then(
+            (data) => (
+              data.code === 200 &&
+                setFormData({ name: "", email: "", phone: "", message: "" }),
+              data.code === 200 ? (setOpen(false), alert(data.success)) : null
+            )
+          );
       })
       .catch((error) => {
         console.error("Error submitting form:", error.message);

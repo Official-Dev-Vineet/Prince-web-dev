@@ -14,7 +14,7 @@
 }
 .marquee .track .content {
   font-weight: bolder;
-  font-size: clamp(1rem, 3vw, 3rem);
+  font-size: clamp(1.3rem, 3vw, 3rem);
   color: var(--theme-text);
   -webkit-text-stroke: 1px var(--theme-color);
   -webkit-text-fill-color: transparent;

@@ -56,9 +56,11 @@ nav .logo {
   display: flex;
   flex-direction: column;
   font-family: "PT Serif", serif;
+  text-decoration: none;
 }
 nav .logo span {
   font-size: 1rem;
+  color: var(--theme-color);
   text-shadow: 0 0 10px var(--white);
 }
 nav .logo span:nth-child(2) {
@@ -99,7 +101,29 @@ nav .bar.active span:nth-child(2) {
 nav .bar.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+nav ul li .new{
+  position: relative;
+}
+nav ul li .new::after{
+  content: "New";
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
+  color: var(--theme-color);
+  font-size: 0.8rem;
+  animation: opacity 1s ease-in-out infinite;
+}
 
+@keyframes opacity {
+  0%,100% {
+    color: var(--theme-color);
+    opacity: 0.6;
+  }
+  50% {
+    color: var(--theme-text);
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 1080px) {
   nav {
     padding: 1rem 2rem;
