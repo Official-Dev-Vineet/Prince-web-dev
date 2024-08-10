@@ -10,6 +10,7 @@ const Service = () => {
     {
       img: "https://readme-components.vercel.app/api?component=logo&fill=black&logo=react&animation=spin&svgfill=15d8fe",
       name: "React js Website",
+      
     },
     {
       img: "https://readme-components.vercel.app/api?component=logo&fill=black&logo=babel&svgfill=8ed5fa",

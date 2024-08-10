@@ -54,7 +54,7 @@ footer .serviceLinks .links ul li {
 footer .serviceLinks .links ul li a {
   text-decoration: none;
   color: var(--theme-text);
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 2vw, 1rem);
   font-weight: 400;
   letter-spacing: 0.5px;
   text-shadow: 0 0 5px var(--theme-color);
@@ -94,7 +94,7 @@ footer .wrapper .socialLinks ul li a:hover {
   text-shadow: 0 0 5px #3b4d75;
 }
 footer .wrapper .socialLinks ul li a:hover svg {
-  color:var(--theme-text);
+  color: var(--theme-text);
   text-shadow: 0 0 5px var(--theme-color);
 }
 footer .wrapper .socialLinks ul li a svg {
@@ -102,29 +102,48 @@ footer .wrapper .socialLinks ul li a svg {
   color: #3b4d75;
   transition: 0.3s;
 }
-footer .copyRight{
+footer .copyRight {
   width: 100%;
 }
-footer .contactNumber{
+footer .contactNumber {
   padding: 1rem;
-background-color: rgba(100,100,100,0.3  );
-max-width: 500px;
-border-radius: 0.5rem;
-width: 100%;
-text-align: center;
+  background-color: rgba(100, 100, 100, 0.3);
+  max-width: 500px;
+  border-radius: 0.5rem;
+  width: 100%;
+  text-align: center;
 }
-footer .contactNumber p{
+footer .contactNumber p {
   display: flex;
   flex-direction: column;
 }
-footer .contactNumber p b{
+footer .contactNumber p b {
   font-size: calc(1rem + 1vw);
   margin-bottom: 1rem;
 }
-footer .contactNumber p a{
+footer .contactNumber p a {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   margin-bottom: 0.2rem;
+}
+@media screen and (max-width: 768px) {
+  footer .contactNumber p a {
+    font-size: 0.7rem;
+  }
+  footer .wrapper .socialLinks ul li a {
+    font-size: 0.8rem;
+  }
+  footer .wrapper .socialLinks ul li a svg {
+    font-size: 1rem;
+  }
+  footer .serviceLinks .links ul {
+    gap: 0rem;
+    padding: 0;
+    margin-left: 0;
+  }
+  footer .serviceLinks {
+    gap: 1rem;
+  }
 }

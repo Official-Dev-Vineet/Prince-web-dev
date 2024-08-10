@@ -9,7 +9,7 @@ const SitemapGenerator = ({ routes }) => {
     });
     routes.forEach((route) => {
       const url = root.ele("url");
-      url.ele("loc").txt(route);
+      url.ele("loc").txt(`https://dev-vineet.online/${route}`);
       url.ele("lastmod").txt(new Date().toISOString());
       url.ele("changefreq").txt("daily");
       url.ele("priority").txt("0.8");
@@ -17,9 +17,9 @@ const SitemapGenerator = ({ routes }) => {
     return root.end({ prettyPrint: true });
   };
   const downloadSitemap = () => {
-    const msg="Enter password to download sitemap";
-    const password=prompt(msg);
-    if(password==="prince"){
+    const msg = "Enter password to download sitemap";
+    const password = prompt(msg);
+    if (password === "prince") {
       const sitemap = generateSitemap();
       const blob = new Blob([sitemap], { type: "text/xml" });
       const url = URL.createObjectURL(blob);

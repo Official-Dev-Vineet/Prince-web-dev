@@ -8,10 +8,13 @@ nav {
   left: 0;
   padding: 1rem 5rem;
   z-index: 100;
+
+  height: 100px;
+  transition: 0.5s ease-out;
 }
 nav.active {
   backdrop-filter: blur(2px);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgb(0, 0, 0);
 }
 nav .common-link {
   display: flex;
@@ -24,7 +27,7 @@ nav .common-link li {
 nav .common-link li a {
   text-decoration: none;
   color: var(--theme-text);
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);
   font-weight: 500;
   text-shadow: 0 0 5px var(--theme-color);
   position: relative;
@@ -101,10 +104,10 @@ nav .bar.active span:nth-child(2) {
 nav .bar.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
-nav ul li .new{
+nav ul li .new {
   position: relative;
 }
-nav ul li .new::after{
+nav ul li .new::after {
   content: "New";
   position: absolute;
   bottom: calc(100% + 0.5rem);
@@ -115,7 +118,8 @@ nav ul li .new::after{
 }
 
 @keyframes opacity {
-  0%,100% {
+  0%,
+  100% {
     color: var(--theme-color);
     opacity: 0.6;
   }
@@ -155,7 +159,7 @@ nav ul li .new::after{
     position: absolute;
     top: 25vh;
     left: calc(-150px - 0.5rem);
-    width: 150px;
+    width: 130px;
     align-items: flex-start;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -163,6 +167,9 @@ nav ul li .new::after{
     box-shadow: 0 0 0.5rem var(--theme-color);
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.8);
+  }
+  nav .right {
+    width: 130px;
   }
   nav .left.active {
     left: 0.5rem;

@@ -47,7 +47,7 @@ const ClassBanner = ({ closeModel }) => {
           <div className="links">
             <div className="info">
               <h3>Demo Class</h3>
-              <h3>26 May 2024, 12:00 PM</h3>
+              <h3>3 September, 12:00 PM</h3>
               <h3>Live Demo</h3>
               <Link to="https://meet.google.com/hcn-asps-qaa">
                 {" "}

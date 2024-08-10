@@ -5,6 +5,7 @@
   height: 300px;
   transform: perspective(500px) rotateX(60deg);
   position: relative;
+  z-index: 2;
 }
 .loader span {
   position: absolute;

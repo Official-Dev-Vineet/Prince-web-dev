@@ -96,8 +96,8 @@ const Footer = () => {
       link: "/blog",
     },
     {
-      name: "News",
-      link: "/news",
+      name: "Tools",
+      link: "/Tools",
     },
     {
       name: "Portfolio",

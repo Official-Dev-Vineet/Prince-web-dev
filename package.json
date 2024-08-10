@@ -4,10 +4,11 @@
   "version": "0.0.1",
   "type": "module",
   "keywords": [
-    "react",
-    "portfolio",
-    "react-portfolio",
-    "vineet singh portfolio"
+    "web development course online free",
+    "jpg to png convertor",
+    "image convertor",
+    "image editing tools",
+    "web development service"
   ],
   "scripts": {
     "dev": "vite",
@@ -16,13 +17,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tensorflow-models/body-pix": "^2.2.1",
+    "@tensorflow/tfjs": "^4.20.0",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
     "browser-image-compression": "^2.0.2",
+    "cropperjs": "^1.6.2",
+    "konva": "^9.3.11",
+    "quill": "^2.0.2",
     "react": "^18.2.0",
+    "react-cropper": "^2.3.3",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-image-file-resizer": "^0.4.8",
+    "react-konva": "^18.2.10",
+    "react-quill": "^0.0.2",
     "react-router-dom": "^6.22.0",
     "reactstrap": "^9.2.2",
     "xmlbuilder2": "^3.1.1"

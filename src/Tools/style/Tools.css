@@ -1,0 +1,30 @@
+.tools{
+    max-width: 1300px;
+    margin-inline: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.tools ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.tools ul li{
+    list-style: none;
+}
+.tools ul li a{
+    color: var(--theme-color);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+.tools ul li a:hover{
+    background-color: var(--theme-color);
+    color: var(--black); 
+}
